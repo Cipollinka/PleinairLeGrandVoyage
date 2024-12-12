@@ -37,7 +37,7 @@
 	<string>${PRODUCT_NAME} To record audio files during video recording.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>${PRODUCT_NAME} This app uses the Photo Library to select a photo only.</string>
-    <key>NSUserTrackingUsageDescription</key>
+	<key>NSUserTrackingUsageDescription</key>
 	<string>${PRODUCT_NAME} uses tracking to provide personalized ads tailored to your interests.</string>
 	<key>UIAppFonts</key>
 	<array>
@@ -46,6 +46,10 @@
 		<string>Raleway-Medium.ttf</string>
 		<string>Raleway-Regular.ttf</string>
 		<string>Raleway-SemiBold.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

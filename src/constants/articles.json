@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Secrets of the Lavender Fields of Provence: When and Where to See Them",
+    "descriptionShort": "Discover the iconic lavender fields of Provence, including the best times and places to visit for peak beauty and tranquility.",
+    "descriptionLong": "The lavender fields of Provence are emblematic of French charm. Blooming from mid-June to late July, these fields paint a vibrant purple landscape, attracting thousands of travelers. Early blooming starts in the Luberon Valley, with peak season in mid-July, and harvest at the end of the month. Top spots include Plateau de Valensole for vast views, Abbey of Senanque for serene walks, and Simiane-la-Rotonde with its annual lavender festival. Remember to respect the fields, take photos at dawn or dusk for best lighting, and explore lavender-based products in local shops. This journey promises unforgettable tranquility and breathtaking scenery.",
+    "image": "https://www.lelongweekend.com/wp-content/uploads/2022/02/DSC04162-768x508.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Top 10 Lesser-Known Castles in France That Will Impress You",
+    "descriptionShort": "Explore ten hidden gems among France’s historic castles, offering unique beauty and rich history beyond the well-known sites.",
+    "descriptionLong": "Beyond the famous French castles like Versailles, there are many hidden architectural wonders. Discover Château de Saint-Germain-en-Laye, a former royal residence now a museum, and Château de Guédelon, a medieval castle under active reconstruction. Explore Château de Bergerac for its wine heritage, Château de Carcassonne's fairy tale ambiance, and more. Each of these lesser-known castles, including Château de La Villetard and Château de Henley, invites you to experience authentic French history, culture, and beauty, minus the tourist crowds. A perfect tour for castle lovers and history buffs alike.",
+    "image": "https://www.oliverstravels.com/blog/wp-content/uploads/2015/10/KEEP-Chateau-de-St-Louis-Loire-Valley-Olivers-Travels1-1-e1608631763623.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Charming Villages of the French Alps: Where to Find a True Winter Wonderland",
+    "descriptionShort": "Experience the French Alps in winter by visiting charming villages that offer festive winter landscapes and cozy atmospheres.",
+    "descriptionLong": "The French Alps host enchanting villages that turn into picturesque winter wonderlands. From Chamonix at Mont Blanc's base to the quaint, light-strewn streets of Megève, each village offers skiing, snowshoeing, and cozy cafes. La Clusaz is known for its traditional ambiance, Tignes offers a blend of skiing and old-town charm, and Saint-Gervais-les-Bains boasts thermal springs. Each village, from Val d'Isère's festive vibe to the mountain views of Praz-sur-Arly, provides a warm, inviting setting for winter fun and relaxation.",
+    "image": "https://www.luxurychaletbook.com/app/uploads/2023/02/retreat-18-exterior-sauna-angle-16673jpg-30927.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Magic of Paris Beyond the Standard Routes: How to Discover the City Anew",
+    "descriptionShort": "Uncover hidden corners of Paris that offer unique charm beyond the well-known landmarks, perfect for a fresh experience of the city.",
+    "descriptionLong": "Paris has endless hidden treasures beyond its iconic landmarks. Visit Cour de la Madeleine for a quiet retreat among historic cafes, or stroll through Parc des Buttes-Chaumont with its romantic waterfall and lake. Wander Rue des Barres in Le Marais for quaint boutiques, or explore the artistic vibe of Rue Voltaire. Enjoy tea at Musée Jacquemart-André's tea room and explore Paris's doll history at Musée de la Poupée. Whether it's Jardin des Tuileries under winter snow or Place du Tertre’s artists, each location offers an authentic slice of Parisian charm.",
+    "image": "https://storage.googleapis.com/endurance-apps-liip/media/cache/olympics-games_channel_jumbotron_grid_fs/644a8514267de4f4d2057567"
+  },
+  {
+    "id": 5,
+    "title": "Top 10 Locations for Photographers in France: From the Louvre to the Verdon Gorge",
+    "descriptionShort": "Capture France’s scenic diversity and iconic spots with these top photography locations, perfect for memorable shots.",
+    "descriptionLong": "France provides a photographer's paradise with locations like the Louvre and the Eiffel Tower for iconic architectural shots, and Verdon Gorge with its turquoise waters and dramatic cliffs for nature photography. Capture the elegance of Saint-Germain-des-Prés, the unique rock formations at Cascade du Sautadet, and the 'Ladies' Castle' of Château de Chenonceau. The Côte d'Azur offers sunset beaches, while Provence's lavender fields in summer provide a fairytale backdrop. From Carcassonne's medieval charm to Jardin des Tuileries' elegance, each site inspires creativity and offers stunning views.",
+    "image": "https://tripjive.com/wp-content/uploads/2023/12/Verdon-Gorge-696x392.png"
+  }
+]

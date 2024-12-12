@@ -1,0 +1,296 @@
+[
+  {
+    "question": "France is the largest country in the European Union.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The capital of France is Marseille.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "France is famous for its cuisine, particularly baguettes and croissants.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The Eiffel Tower was built for the 1889 World's Fair.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "France is known for its wine tradition and is the largest wine producer in the world.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "It is illegal to sell beer in France.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "The Louvre is the largest museum in the world, located in Paris.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "There are over 400 types of cheese in France.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The French language is one of the official languages of the United Nations.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "France is the birthplace of the popular game of poker.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "Monaco is an enclave surrounded by French territory.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "France is home to the highest mountain in Europe, Mont Blanc.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "France is a member of NATO.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The French rivers Loire and Rhône are the largest in the country.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "Bastille Day is celebrated on July 14th.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "A French chef has the title of 'Master Chef.'",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "Paris has more bridges than Venice.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "France has four climatic zones.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "France was one of the first countries to adopt the metric system.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The French version of French fries is called 'pommes frites.'",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "France produces more than 50% of the world's wine.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "France has a multi-party election system.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "French cheeses include 'Brie' and 'Camembert.'",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The Louvre was previously a royal palace.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The French national language is mandatory for all citizens.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "There is a tradition of celebrating 'Cracker Day' in France.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "France is home to the international organization UNESCO.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The country has the largest populated island in Europe, Corsica.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "French summer holidays last for two months.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "France is known for its pottery from Faïence.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "Paris has its own metro system, which is one of the oldest in the world.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The French language is the most spoken language in the world after English.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "There is a French embassy located in Ukraine.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The French flag consists of three vertical stripes: blue, white, and red.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The national sport of France is football (soccer).",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "France has an island called 'Saint Martin.'",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "France has a strong fashion tradition, with Paris being the fashion capital.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "All French beaches are private.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  },
+  {
+    "question": "French breakfast often includes croissants and coffee.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "The Tour de France is an annual men's bicycle race.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "French is the official language of Canada.",
+    "options": [
+      {"answer": "True", "isCorrect": true},
+      {"answer": "False", "isCorrect": false}
+    ]
+  },
+  {
+    "question": "France has a total of 13 regions.",
+    "options": [
+      {"answer": "True", "isCorrect": false},
+      {"answer": "False", "isCorrect": true}
+    ]
+  }
+]

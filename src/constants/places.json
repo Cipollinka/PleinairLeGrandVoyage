@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Mont Saint-Michel",
+    "region": "Normandy",
+    "famous_for": "This medieval abbey perched on a rocky island rises dramatically from the sea, surrounded by rapidly changing tides.",
+    "description": "Mont Saint-Michel is a true architectural masterpiece that combines Gothic style with Romanesque elements. Its narrow streets, lined with shops, restaurants, and museums, lead up to the top of the rock, offering insights into its rich historical heritage.",
+    "interesting_fact": "During high tides, the island becomes isolated, adding to its magic and romantic allure.",
+    "rating": "9.5/10",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Mont-Saint-Michel_vu_du_ciel.jpg/640px-Mont-Saint-Michel_vu_du_ciel.jpg",
+    "position": {
+      "top": 170,
+      "left": 150
+    }
+  },
+  {
+    "id": 2,
+    "name": "Palace of Versailles and Gardens",
+    "region": "Versailles",
+    "famous_for": "Its opulence and grandeur, this palace symbolizes the absolute monarchy of France.",
+    "description": "Built in the 17th century, the palace dazzles with its luxurious halls, such as the Hall of Mirrors, and stunning gardens designed by André Le Nôtre. The gardens of Versailles are known for their fountains, flowerbeds, and numerous statues, creating an idyllic atmosphere.",
+    "interesting_fact": "The palace served as the residence of Louis XIV, who transformed Versailles into the center of political life in France.",
+    "rating": "9.0/10",
+    "image": "https://www.french-gardens.com/images/stories/versaille/chateau-versailles.jpg",
+    "position": {
+      "top": 200,
+      "left": 420
+    }
+  },
+  {
+    "id": 3,
+    "name": "Eiffel Tower",
+    "region": "Paris",
+    "famous_for": "Its unique architectural form and status as a symbol of Paris.",
+    "description": "Built in 1889 for the World’s Fair, the tower rises to 330 meters and has become a favorite spot for tourists. Visitors can ascend several levels to enjoy panoramic views of the city. The evening illumination of the tower creates a breathtaking spectacle.",
+    "interesting_fact": "Initially, the tower was intended to be dismantled after 20 years, but it became so popular that it was retained.",
+    "rating": "9.7/10",
+    "image": "https://cdn.mos.cms.futurecdn.net/z3rNHS9Y6PV6vbhH8w83Yn-1200-80.jpg",
+    "position": {
+      "top": 220,
+      "left": 550
+    }
+  },
+  {
+    "id": 4,
+    "name": "Lake Annecy",
+    "region": "Alps",
+    "famous_for": "Its crystal-clear waters and picturesque scenery.",
+    "description": "Surrounded by mountains, Lake Annecy is an ideal spot for relaxation, water sports, and hiking. The charming town of Annecy, located on the lake's shore, is known for its architecture, cobblestone streets, and colorful houses.",
+    "interesting_fact": "The lake is often referred to as the 'Pearl of the Alps' due to its unmatched beauty and cleanliness.",
+    "rating": "9.3/10",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Boat_%40_Compagnie_des_Bateaux_du_Lac_d%27Annecy_%40_Lake_Annecy_%40_Saint-Jorioz_%2850488289926%29.jpg/640px-Boat_%40_Compagnie_des_Bateaux_du_Lac_d%27Annecy_%40_Lake_Annecy_%40_Saint-Jorioz_%2850488289926%29.jpg",
+    "position": {
+      "top": 480,
+      "left": 800
+    }
+  },
+  {
+    "id": 5,
+    "name": "Château de Chenonceau",
+    "region": "Loire Valley",
+    "famous_for": "Its breathtaking location over the water and fascinating history.",
+    "description": "This castle, built in the 16th century, captivates visitors with its architectural beauty, blending Gothic and Renaissance styles. Known as the 'Ladies’ Castle,' Chenonceau is famous for its association with influential women like Diane de Poitiers and Catherine de' Medici.",
+    "interesting_fact": "The castle features magnificent gardens that span over 6 hectares and hosts annual festivals celebrating flora.",
+    "rating": "9.4/10",
+    "image": "https://gobargingwp-s3.s3.eu-west-1.amazonaws.com/wp-content/uploads/2023/04/Chateau-de-Chenonceau-2.jpg",
+    "position": {
+      "top": 330,
+      "left": 410
+    }
+  },
+  {
+    "id": 7,
+    "name": "Nice and the French Riviera",
+    "region": "Côte d'Azur",
+    "famous_for": "Its luxurious beaches, cultural events, and festive atmosphere.",
+    "description": "Nice, known for its promenades and historic landmarks like the Old Town and St. Rupert's Church, is a popular resort destination. The French Riviera offers numerous opportunities for water sports and gastronomic delights.",
+    "interesting_fact": "Nice became a popular destination for the aristocracy in the 19th century, and many prominent figures, such as Pablo Picasso, spent time there.",
+    "rating": "9.5/10",
+    "image": "https://images.ctfassets.net/i3kf1olze1gn/4FPylwuJOnsoD7uECnIpuY/a42936660cdf3abd834f24d05b37e3dc/GettyImages-805553090.jpg?q=55&w=640",
+    "position": {
+      "top": 650,
+      "left": 800
+    }
+  },
+  {
+    "id": 8,
+    "name": "Dune du Pilat",
+    "region": "Aquitaine",
+    "famous_for": "Being the tallest sand dune in Europe.",
+    "description": "Rising to 110 meters and stretching about 2.7 km along the Atlantic Ocean coast, the dune is a stunning natural wonder. Visitors can enjoy panoramic views of the sea and surrounding forests, making it a favorite spot for tourists looking to hike and take in the scenery.",
+    "interesting_fact": "The dune is constantly shifting due to winds that move the sand, making it a living natural phenomenon.",
+    "rating": "9.2/10",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/DunePyla.JPG/640px-DunePyla.JPG",
+    "position": {
+      "top": 570,
+      "left": 240
+    }
+  },
+  {
+    "id": 9,
+    "name": "Chamonix-Mont-Blanc",
+    "region": "French Alps",
+    "famous_for": "It's popular ski slopes and the opportunity to conquer Mont Blanc.",
+    "description": "This destination is perfect for outdoor enthusiasts year-round. Chamonix offers numerous skiing courses, alpine climbing routes, and stunning vistas for hiking.",
+    "interesting_fact": "Chamonix hosted the first Winter Olympics in 1924, solidifying its place in winter sports history.",
+    "rating": "9.4/10",
+    "image": "https://frenchmoments.eu/wp-content/uploads/2012/11/Chamonix-Mont-Blanc-Featured-Image-web-copyright-French-Moments.jpg",
+    "position": {
+      "top": 390,
+      "left": 750
+    }
+  },
+  {
+    "id": 10,
+    "name": "Colmar",
+    "region": "Alsace",
+    "famous_for": "Its charming old houses and canals.",
+    "description": "Colmar, with its well-preserved medieval atmosphere, impresses with beautiful half-timbered buildings. Known for its gastronomy, Colmar offers a wide variety of restaurants serving traditional Alsatian dishes.",
+    "interesting_fact": "Colmar is famous for its Christmas markets, which are among the most beautiful in Europe, attracting tourists from all over the world.",
+    "rating": "9.0/10",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/ColmarFrance.jpg/640px-ColmarFrance.jpg",
+    "position": {
+      "top": 250,
+      "left": 800
+    }
+  }
+]

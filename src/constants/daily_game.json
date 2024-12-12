@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "task": "You are going on a camping trip for one night in the forest. Choose the 5 most necessary things from the proposed list.",
+    "itemsToCollectCount": 5,
+    "allItems": [
+      "Tent",
+      "SleepingBag",
+      "CampingStoveWithGas",
+      "BottledWater",
+      "Flashlight",
+      "Hammock",
+      "Sunscreen",
+      "FirstAidKit"
+    ],
+    "perfectItems": [
+      "Tent",
+      "SleepingBag",
+      "BottledWater",
+      "Flashlight",
+      "FirstAidKit"
+    ],
+    "goodItems": ["SleepingBag", "BottledWater", "FirstAidKit"],
+    "wrongItems": ["Sunscreen", "Hammock"]
+  },
+  {
+    "id": 2,
+    "task": "You are going on a day hike in the mountains. Choose 4 items to bring with you.",
+    "itemsToCollectCount": 4,
+    "allItems": [
+      "BottledWater",
+      "Map",
+      "Sunglasses",
+      "Snacks",
+      "Blanket",
+      "Flashlight",
+      "Swimwear",
+      "WinterJacket"
+    ],
+    "perfectItems": ["BottledWater", "Map", "Snacks", "WinterJacket"],
+    "goodItems": ["BottledWater", "Map", "WinterJacket", "Sunglasses"],
+    "wrongItems": ["Blanket", "Swimwear"]
+  },
+  {
+    "id": 3,
+    "task": "Choose 5 items for a picnic in nature by the river.",
+    "itemsToCollectCount": 5,
+    "allItems": [
+      "Speaker",
+      "Sunscreen",
+      "PortableGrill",
+      "CampingStoveWithGas",
+      "Hammock",
+      "Blanket",
+      "HikingBoots",
+      "Swimwear"
+    ],
+    "perfectItems": [
+      "PortableGrill",
+      "CampingStoveWithGas",
+      "Blanket",
+      "Sunscreen",
+      "Swimwear"
+    ],
+    "goodItems": [
+      "PortableGrill",
+      "CampingStoveWithGas",
+      "Blanket",
+      "HikingBoots"
+    ],
+    "wrongItems": ["Speaker", "HikingBoots"]
+  },
+  {
+    "id": 4,
+    "task": "You are going camping, and rain is forecast. Choose 4 items that will be most useful.",
+    "itemsToCollectCount": 4,
+    "allItems": [
+      "WaterproofTent",
+      "Raincoat",
+      "SleepingBag",
+      "CampingStoveWithGas",
+      "FirstAidKit",
+      "Hammock",
+      "Sunscreen",
+      "FireStarters"
+    ],
+    "perfectItems": [
+      "WaterproofTent",
+      "Raincoat",
+      "SleepingBag",
+      "FirstAidKit"
+    ],
+    "goodItems": ["WaterproofTent", "SleepingBag", "Raincoat", "FirstAidKit"],
+    "wrongItems": ["FireStarters", "Hammock"]
+  },
+  {
+    "id": 5,
+    "task": "You are going on a bike trip for the whole day. Choose the 4 items you will need.",
+    "itemsToCollectCount": 4,
+    "allItems": [
+      "BikeHelmet",
+      "BottledWater",
+      "BikePump",
+      "Sunglasses",
+      "EnergyBar",
+      "Swimwear",
+      "Map",
+      "FirstAidKit"
+    ],
+    "perfectItems": ["BikeHelmet", "BottledWater", "BikePump", "EnergyBar"],
+    "goodItems": ["BikeHelmet", "BikePump", "BottledWater"],
+    "wrongItems": ["Sunglasses", "Swimwear"]
+  },
+  {
+    "id": 6,
+    "task": "You go camping with children. Choose 5 items for safety and comfort.",
+    "itemsToCollectCount": 5,
+    "allItems": [
+      "Tent",
+      "FirstAidKit",
+      "Toys",
+      "Hammock",
+      "SleepingBag",
+      "Flashlight",
+      "Sunscreen",
+      "PortableFridge"
+    ],
+    "perfectItems": [
+      "Tent",
+      "FirstAidKit",
+      "SleepingBag",
+      "Flashlight",
+      "Toys"
+    ],
+    "goodItems": ["Tent", "FirstAidKit", "SleepingBag", "Flashlight"],
+    "wrongItems": ["Hammock", "PortableFridge"]
+  },
+  {
+    "id": 7,
+    "task": "You go to the beach for the whole day. Choose 5 items for a comfortable rest.",
+    "itemsToCollectCount": 5,
+    "allItems": [
+      "BottledWater",
+      "Sunscreen",
+      "Swimwear",
+      "Sunglasses",
+      "BeachHat",
+      "HikingBoots",
+      "Snacks",
+      "BeachTowel"
+    ],
+    "perfectItems": [
+      "BottledWater",
+      "Sunscreen",
+      "Swimwear",
+      "Sunglasses",
+      "BeachTowel"
+    ],
+    "goodItems": ["BottledWater", "Swimwear", "BeachTowel"],
+    "wrongItems": ["HikingBoots", "BeachHat"]
+  }
+]

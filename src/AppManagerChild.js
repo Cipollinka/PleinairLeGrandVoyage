@@ -18,31 +18,33 @@ export default function AppManagerChild({navigation, route}) {
 
   const redirectDomens = ['https://ninecasino.life/#deposit'];
 
-  const openInBrowser = [
-    'mailto:',
-    'itms-appss://',
-    'https://m.facebook.com/',
-    'https://www.facebook.com/',
-    'https://www.instagram.com/',
-    'https://twitter.com/',
-    'https://www.whatsapp.com/',
-    'https://t.me/',
-    'fb://',
-    'conexus://',
-    'bmoolbb://',
-    'cibcbanking://',
-    'bncmobile://',
-    'rbcmobile://',
-    'scotiabank://',
-    'pcfbanking://',
-    'tdct://',
-    'nl.abnamro.deeplink.psd2.consent://',
-    'nl-snsbank-sign://',
-    'nl-asnbank-sign://',
-    'triodosmobilebanking',
-    // 'wise',
-    // 'skrill',
-  ];
+    let openInBrowser;
+    openInBrowser = [
+      'mailto:',
+      'itms-appss://',
+      'https://m.facebook.com/',
+      'https://www.facebook.com/',
+      'https://www.instagram.com/',
+      'https://twitter.com/',
+      'https://www.whatsapp.com/',
+      'https://t.me/',
+      'fb://',
+      'conexus://',
+      'bmoolbb://',
+      'cibcbanking://',
+      'bncmobile://',
+      'rbcmobile://',
+      'scotiabank://',
+      'pcfbanking://',
+      'tdct://',
+      'nl.abnamro.deeplink.psd2.consent://',
+      'nl-snsbank-sign://',
+      'nl-asnbank-sign://',
+      'triodosmobilebanking',
+      'https://casinoidapp.page.link/',
+      // 'wise',
+      // 'skrill',
+    ];
 
   function backHandlerButton() {
     if (isTwoClick) {
@@ -114,6 +116,9 @@ export default function AppManagerChild({navigation, route}) {
           source={{uri: linkRefresh}}
           textZoom={100}
           onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
+          onNavigationStateChange={(stat) => {
+              console.log(stat);
+          }}
           allowsBackForwardNavigationGestures={true}
           domStorageEnabled={true}
           javaScriptEnabled={true}

@@ -7,12 +7,12 @@ workflows:
       groups:
         - creds
       vars:
-        XCODE_WORKSPACE: "pleinair_voyage_fr.xcworkspace" # <----
-        XCODE_SCHEME: "pleinair_voyage_fr" # <----
-        BUNDLE_ID: "com.plainairvoyage.app" # <----
+        XCODE_WORKSPACE: 'pleinair_voyage_fr.xcworkspace' # <----
+        XCODE_SCHEME: 'pleinair_voyage_fr' # <----
+        BUNDLE_ID: 'com.plainairvoyage.app' # <----
         APP_STORE_APP_ID: 6737815578 # <----
-        APP_STORE_CONNECT_KEY_ID: "VAHW5QCPN3" # <----
-        APP_STORE_CONNECT_ISSUER_ID: "88b42981-c7aa-4ac0-ad62-30c2945b1556" # <----
+        APP_STORE_CONNECT_KEY_ID: '732B9JPB8S' # <----
+        APP_STORE_CONNECT_ISSUER_ID: '88b42981-c7aa-4ac0-ad62-30c2945b1556' # <----
         node: latest
         xcode: latest
         cocoapods: default
@@ -60,7 +60,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - fvzxqaqart@gmail.com       # <----
+          - fvzxqaqart@gmail.com # <----
         notify:
           success: true
           failure: false
@@ -71,7 +71,7 @@ workflows:
           success: true
           failure: false
       app_store_connect:
-        api_key: "$APP_STORE_CONNECT_PRIVATE_KEY"
-        key_id: "$APP_STORE_CONNECT_KEY_ID"
-        issuer_id: "$APP_STORE_CONNECT_ISSUER_ID"
+        api_key: '$APP_STORE_CONNECT_PRIVATE_KEY'
+        key_id: '$APP_STORE_CONNECT_KEY_ID'
+        issuer_id: '$APP_STORE_CONNECT_ISSUER_ID'
         submit_to_testflight: true

@@ -4,9 +4,7 @@ export default class Storage {
   static async save(key, value) {
     try {
       await AsyncStorage.setItem(key, '' + value);
-    } catch (error) {
-      console.error('Error saving data to AsyncStorage:', error);
-    }
+    } catch (error) {}
   }
 
   static async get(key) {
@@ -15,9 +13,7 @@ export default class Storage {
       if (value !== null) {
         return value;
       }
-    } catch (error) {
-      console.error('Error reading value from AsyncStorage:', error);
-    }
+    } catch (error) {}
     return null;
   }
 }

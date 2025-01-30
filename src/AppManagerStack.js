@@ -6,13 +6,17 @@ import AppManagerChild from './AppManagerChild';
 
 const Stack = createStackNavigator();
 
-export default function AppManagerStack() {
+export default function AppManagerStack({dataLoad}) {
   return (
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
         initialRouteName="main">
-        <Stack.Screen name="main" component={AppManagerMain} />
+        <Stack.Screen
+          name="main"
+          component={AppManagerMain}
+          initialParams={{data: dataLoad}}
+        />
         <Stack.Screen name="child" component={AppManagerChild} />
       </Stack.Navigator>
     </NavigationContainer>

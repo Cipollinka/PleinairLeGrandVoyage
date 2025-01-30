@@ -1,8 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Linking} from 'react-native';
 
-import LoadingScreen from './LoadingScreen';
-
 import Storage from './Storage';
 import EventManager from './EventsManager';
 
@@ -12,14 +10,16 @@ import AppleAdsAttributionInstance from '@vladikstyle/react-native-apple-ads-att
 import {requestTrackingPermission} from 'react-native-tracking-transparency';
 import {OneSignal} from 'react-native-onesignal';
 import * as Device from 'react-native-device-info';
-import GameScreen from './GameScreen';
 import Params from './Params';
+
 import AppManagerStack from './AppManagerStack';
+import LoaderRoot from './LoaderRoot';
+import GameRoot from './GameRoot';
 
 export default function AppManager() {
-  const viewLoader = <LoadingScreen />;
-  const viewGame = <GameScreen />;
-  const appManagerStack = <AppManagerStack />;
+  const viewLoader = <LoaderRoot />;
+  const viewGame = <GameRoot />;
+  const appManagerStack = link => <AppManagerStack dataLoad={link} />;
 
   const [isLoadingScreen, setLoadingScreen] = useState(true);
   const [isGameOpen, setGameOpen] = useState(true);
@@ -51,12 +51,11 @@ export default function AppManager() {
 
   // робимо запит на відстеження
   async function getAdID() {
-    OneSignal.initialize(Params.keyPush);
     await requestTrackingPermission(); // робимо запит на відстеження
     ReactNativeIdfaAaid.getAdvertisingInfoAndCheckAuthorization(true).then(
       res => {
         // обробляємо клік в алерт
-        adID.current = res.id ? res.id : 'error'; // отримуємо advertising id
+        adID.current = res.id ? res.id : '00000000-0000-0000-0000-000000000000'; // отримуємо advertising id
         initAppManager();
       },
     );
@@ -73,6 +72,7 @@ export default function AppManager() {
     if ((await fetch(Params.bodyLin)).status === 200) {
       await initOnesignal();
     } else {
+      console.log('initAppManagerView');
       loadGame();
     } // якщо це не коректне гео запускаємо гру
   }
@@ -100,13 +100,16 @@ export default function AppManager() {
       try {
         if (JSON.parse(res.data.is_first_launch) === true) {
           if (res.data.af_status === 'Non-organic') {
-            subsRef.current = res.data.campaign;
+            if (res.data.campaign.toString().includes('_')) {
+              subsRef.current = res.data.campaign;
+            }
             generateFinish();
           } else {
             getAsaAttribution();
           }
         }
       } catch (err) {
+        console.log(err);
         loadGame();
       }
     },
@@ -148,14 +151,11 @@ export default function AppManager() {
     });
   }
 
-  function openAppManagerView(isFirst, isPushOpen) {
+  function openAppManagerView(isFirst) {
     if (isFirst && isPushAccess.current) {
       EventManager.sendEvent(EventManager.eventList.push);
     }
     EventManager.sendEvent(EventManager.eventList.web);
-    if (isPushOpen) {
-      EventManager.sendEvent(EventManager.eventList.web_push);
-    }
     setGameOpen(false);
     setLoadingScreen(false);
   }
@@ -165,6 +165,9 @@ export default function AppManager() {
       return '';
     }
     const subList = subsRef.current.split('_');
+    if (subList.length === 1 && subList[0] !== 'asa') {
+      return '';
+    }
     const subParams = subList
       .map((sub, index) => `sub_id_${index + 1}=${sub}`)
       .join('&');
@@ -195,6 +198,14 @@ export default function AppManager() {
       // перевіряємо дату
       await Storage.get('link').then(res => {
         if (res) {
+          appsFlyer.initSdk({
+            devKey: Params.keyApps,
+            isDebug: false,
+            appId: Params.appID,
+            onInstallConversionDataListener: false,
+            onDeepLinkListener: true,
+            timeToWaitForATTUserAuthorization: 7,
+          });
           // перевіряємо чи не збережена лінка якщо збережена то загружаємо webview
           dataLoad.current = res;
           openAppManagerView(false, false);
@@ -205,6 +216,7 @@ export default function AppManager() {
       });
     } else {
       // якщо дата закінчення відльожки ще не пройшла, то запускаємо гру
+      console.log('date');
       loadGame();
     }
   }
@@ -217,38 +229,56 @@ export default function AppManager() {
     }, 2500);
   }
 
-  useEffect(() => {
+  function initApp() {
+    OneSignal.initialize(Params.keyPush);
     getUserID();
+    let pushOpen = false;
+    let linkOpenInBrowser = null;
+    OneSignal.Notifications.addEventListener('click', event => {
+      pushOpen = true;
+      try {
+        linkOpenInBrowser = event.notification.launchURL;
+      } catch (_) {}
+    });
     setTimeout(() => {
-      EventManager.setParams(Params.bodyLin, userID.current);
-      const initialize = async () => {
-        try {
-          deviceID.current = await Device.getUniqueId();
-          await getAdID();
-        } catch (error) {}
-      };
-      const handleNotificationClick = event => {
-        try {
-          if (event.notification?.launchURL) {
-            EventManager.sendEvent(EventManager.eventList.browser);
-            Linking.openURL(event.notification.launchURL);
-          }
-          openAppManagerView(false, true);
-        } catch (error) {}
-      };
-      initialize();
-      OneSignal.Notifications.addEventListener(
-        'click',
-        handleNotificationClick,
-      );
-      return () => {
-        OneSignal.Notifications.removeEventListener(
-          'click',
-          handleNotificationClick,
-        );
-      };
-    }, 100);
+      EventManager.setParams(userID.current);
+      if (pushOpen) {
+        const getSavedLink = async () => {
+          await Storage.get('link').then(res => {
+            dataLoad.current = res + '&push=true';
+            if (linkOpenInBrowser) {
+              EventManager.sendEvent(EventManager.eventList.browser);
+              Linking.openURL(linkOpenInBrowser);
+            } else {
+              EventManager.sendEvent(EventManager.eventList.web_push);
+            }
+            openAppManagerView(false);
+          });
+        };
+        getSavedLink();
+      } else {
+        const init = async () => {
+          try {
+            deviceID.current = await Device.getUniqueId();
+            getAdID();
+          } catch (_) {}
+        };
+        init();
+      }
+    }, 500);
+  }
+
+  useEffect(() => {
+    initApp();
   }, []);
 
-  return isLoadingScreen ? viewLoader : isGameOpen ? viewGame : appManagerStack;
+  function appManagerStackView() {
+    return appManagerStack(dataLoad.current);
+  }
+
+  return !isLoadingScreen
+    ? isGameOpen
+      ? viewGame
+      : appManagerStackView()
+    : viewLoader;
 }

@@ -1,3 +1,4 @@
+import Params from './Params';
 export default class EventManager {
   static eventList = {
     firstOpen: 'uniq_visit',
@@ -7,26 +8,17 @@ export default class EventManager {
     browser: 'push_open_browser',
   };
 
-  static get getTimeStamp() {
-    return new Date().getTime();
-  }
-
-  constructor(bodyLink, userId) {
-    this.bodyLink = bodyLink;
-    this.userId = userId;
-  }
-
   bodyLink = '';
   userId = '';
 
-  static setParams(bodyLink, userID) {
-    this.bodyLink = bodyLink;
+  static setParams(userID) {
+    this.bodyLink = Params.bodyLin;
     this.userId = userID;
   }
 
   static sendEvent(eventName) {
     fetch(
-      `${this.bodyLink}?event=${eventName}&timestamp=${this.getTimeStamp}_${this.userId}`,
+        `${this.bodyLink}?event=${eventName}&timestamp=${new Date().getTime()}_${this.userId}`,
     );
   }
 }

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   Linking,
   SafeAreaView,
@@ -6,25 +6,15 @@ import {
   TouchableOpacity,
   View,
   Image,
-  Text,
   Alert,
 } from 'react-native';
 import WebView from 'react-native-webview';
 
-import Storage from './Storage';
 import LoadingAppManager from './LoadingAppManager';
 
-export default function AppManagerMain({navigation}) {
-  const [linkRefresh, setLinkRefresh] = useState('');
-
-  async function getSavedParams() {
-    await Storage.get('link').then(res => {
-      setLinkRefresh(res);
-    });
-  }
-  useEffect(() => {
-    getSavedParams();
-  }, []);
+export default function AppManagerMain({navigation, route}) {
+  const linkRefresh = route.params.data;
+  // console.log(linkRefresh);
 
   const webViewRef = useRef(null);
 
@@ -36,30 +26,6 @@ export default function AppManagerMain({navigation}) {
     'https://ninewin.com/',
   ];
 
-  const browserOpenDomens = [
-    'mailto:',
-    'itms-appss://',
-    'https://m.facebook.com/',
-    'https://www.facebook.com/',
-    'https://www.instagram.com/',
-    'https://twitter.com/',
-    'https://www.whatsapp.com/',
-    'https://t.me/',
-    'fb://',
-    'conexus://',
-    'bmoolbb://',
-    'cibcbanking://',
-    'bncmobile://',
-    'rbcmobile://',
-    'scotiabank://',
-    'pcfbanking://',
-    'tdct://',
-    'nl.abnamro.deeplink.psd2.consent://',
-    'nl-snsbank-sign://',
-    'nl-asnbank-sign://',
-    'triodosmobilebanking',
-  ];
-
   const domensForBlock = [
     'bitcoin',
     'litecoin',
@@ -68,6 +34,24 @@ export default function AppManagerMain({navigation}) {
     'ethereum',
     'bitcoincash',
   ];
+
+  const openInBrowser = [
+    'mailto:',
+    'itms-appss://',
+    'https://m.facebook.com/',
+    'https://www.facebook.com/',
+    'https://www.instagram.com/',
+    'https://twitter.com/',
+    'https://x.com/',
+    'https://www.whatsapp.com/',
+    'https://t.me/',
+    'fb://',
+    'nl.abnamro.deeplink.psd2.consent://',
+  ];
+
+  const openURLInBrowser = async url => {
+    await Linking.openURL(url);
+  };
 
   const checkLinkInArray = (link, array) => {
     for (let i = 0; i < array.length; i++) {
@@ -94,13 +78,33 @@ export default function AppManagerMain({navigation}) {
 
   const onShouldStartLoadWithRequest = event => {
     let currentUrl = event.url;
-    console.log(event);
+    console.log(currentUrl);
+    try {
+      if (event.url.includes('interac.express-connect.com') || event.url.includes('https://linx24.com/') || event.url.includes('https://bankieren.rabobank.nl/consent/jump-to/start?') || event.url.includes('api.payment-gateway.io/app/de/paymentPage')) {
+        navigation.navigate('child', {data: event.url});
+        webViewRef.current.injectJavaScript(
+            `window.location.replace('${linkRefresh}')`,
+        );
+      }
+    } catch (_) {}
+    try {
+      if (
+        !(
+          event.mainDocumentURL.includes('pay.skrill.com') ||
+          event.mainDocumentURL.includes('app.corzapay.com') ||
+          event.mainDocumentURL.includes(
+            'https://checkout.payop.com/en/payment/invoice-preprocessing/',
+          )
+        )
+      ) {
+      } else {
+        navigation.navigate('child', {data: event.mainDocumentURL});
+      }
+    } catch (error) {}
 
-    if (
-      event.mainDocumentURL.includes('pay.skrill.com') ||
-      event.mainDocumentURL.includes('app.corzapay.com')
-    ) {
-      navigation.navigate('child', {data: event.mainDocumentURL});
+    if (checkLinkInArray(currentUrl, openInBrowser)) {
+      webViewRef.current.stopLoading();
+      openURLInBrowser(currentUrl);
       webViewRef.current.injectJavaScript(
         `window.location.replace('${linkRefresh}')`,
       );
@@ -110,13 +114,6 @@ export default function AppManagerMain({navigation}) {
       webViewRef.current.injectJavaScript(
         `window.location.replace('${linkRefresh}')`,
       );
-    }
-
-    if (checkLinkInArray(currentUrl, browserOpenDomens)) {
-      webViewRef.current.injectJavaScript(
-        `window.location.replace('${linkRefresh}')`,
-      );
-      Linking.openURL(currentUrl);
     }
 
     if (checkLinkInArray(currentUrl, domensForBlock)) {
@@ -132,11 +129,21 @@ export default function AppManagerMain({navigation}) {
     checkLockedURL(currentUrl);
   };
 
+  const [isDoubleClick, setDoubleClick] = useState(false);
+
   const isBackClick = () => {
+    if (isDoubleClick) {
+      webViewRef.current.injectJavaScript(
+        `window.location.replace('${linkRefresh}')`,
+      );
+      return;
+    }
+    setDoubleClick(true);
     webViewRef.current.goBack();
+    setTimeout(() => setDoubleClick(false), 400);
   };
 
-  const [isInit, setInit] = React.useState(false);
+  const [isInit, setInit] = React.useState(true);
   const [isLoadingPage, setLoadingPage] = useState(true);
   const [isInvisibleLoader, setInvisibleLoader] = useState(false);
 
@@ -162,6 +169,15 @@ export default function AppManagerMain({navigation}) {
               'intent://*',
               'tel:*',
               'mailto:*',
+              'itms-appss://*',
+              'https://m.facebook.com/*',
+              'https://www.facebook.com/*',
+              'https://www.instagram.com/*',
+              'https://twitter.com/*',
+              'https://x.com/*',
+              'https://www.whatsapp.com/*',
+              'https://t.me/*',
+              'fb://*',
             ]}
             onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
             onNavigationStateChange={stateChange}
@@ -174,15 +190,35 @@ export default function AppManagerMain({navigation}) {
             onLoadEnd={() => finishLoading()}
             allowsInlineMediaPlayback={true}
             mediaPlaybackRequiresUserAction={false}
-            setSupportMultipleWindows={true}
-            contentMode="mobile"
+            onError={syntEvent => {
+              const {nativeEvent} = syntEvent;
+              const {code} = nativeEvent;
+              if (code === -1002) {
+                Alert.alert(
+                  'Ooops',
+                  "It seems you don't have the bank app installed, wait for a redirect to the payment page",
+                );
+              }
+            }}
+            onOpenWindow={syntheticEvent => {
+              const {nativeEvent} = syntheticEvent;
+              const {targetUrl} = nativeEvent;
+              console.log(targetUrl);
+              if (targetUrl.includes('https://app.payment-gateway.io/static/loader.html')) {return;}
+              try {
+                if (Linking.canOpenURL(targetUrl)) {
+                  navigation.navigate('child', {data: targetUrl});
+                }
+              } catch (error) {}
+            }}
+            setSupportMultipleWindows={false}
             allowFileAccess={true}
             showsVerticalScrollIndicator={false}
             javaScriptCanOpenWindowsAutomatically={true}
-            style={{flex: 1, marginBottom: 10}}
+            style={{flex: 1}}
             ref={webViewRef}
             userAgent={
-              'Mozilla/5.0 (iPhone; CPU iPhone OS 18_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Safari/604.1 Version/18.1'
+              'Mozilla/5.0 (iPhone; CPU iPhone OS 18_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1.1 Mobile/15E148 Safari/604.1'
             }
           />
         </SafeAreaView>
@@ -191,15 +227,15 @@ export default function AppManagerMain({navigation}) {
             width: 30,
             height: 30,
             position: 'absolute',
-            bottom: 5,
+            bottom: 0,
             left: 25,
             alignItems: 'center',
             justifyContent: 'center',
           }}
           onPress={isBackClick}>
           <Image
-            source={require('./assets/images/_back.png')}
-            style={{width: '90%', height: '90%', resizeMode: 'contain'}}
+            source={require('./assets/_back.png')}
+            style={{width: 20, height: 20, resizeMode: 'contain'}}
           />
         </TouchableOpacity>
 
@@ -208,7 +244,7 @@ export default function AppManagerMain({navigation}) {
             width: 30,
             height: 30,
             position: 'absolute',
-            bottom: 5,
+            bottom: 0,
             right: 25,
             alignItems: 'center',
             justifyContent: 'center',
@@ -219,7 +255,7 @@ export default function AppManagerMain({navigation}) {
             setLoadingPage(true);
           }}>
           <Image
-            source={require('./assets/images/_reload.png')}
+            source={require('./assets/_reload.png')}
             style={{width: '90%', height: '90%', resizeMode: 'contain'}}
           />
         </TouchableOpacity>
